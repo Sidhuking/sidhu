@@ -1,0 +1,60 @@
+package DemoWeb;
+
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.junit.After
+import org.junit.Before;
+import org.junit.Test;
+
+import Driver.LogWriter;
+import Driver.util.Constants;
+import Util.TestUtil;
+import Executor.baseclass;
+import Executor.globalIdentifiers;
+
+
+public class verifyDemoWebShop{
+
+
+@Before
+public void Setup() throws IOException {
+
+globalIdentifiers.sTestDataKeyValues= testdatautility.GetTestData(globalIdentifiers.sTestDatafilePath,globalIdentifiers.sTCNew);
+System.out.println(""-----------Before");
+}
+
+@Test
+@SuppressWarnings({"static-access"})
+
+public void testScript() throws Exception{
+
+teststepsLogin teststepsLogin = new teststepsLogin();
+
+
+globalIdentifiers.writeExtentReport = globalIdentifiers,test.createNode("Step"+(++node)+":Launch the Demo Application");
+Assert.assertEquals(true, teststepsLogin.launchDemoWebShopApplication());
+
+globalIdentifiers.writeExtentReport = globalIdentifiers,test.createNode("Step"+(++node)+":Login to  the Demo Application");
+Assert.assertEquals(true, teststepsLogin.loginToDemoWebShopApplication());
+
+globalIdentifiers.writeExtentReport = globalIdentifiers,test.createNode("Step"+(++node)+":Selecting the shopping carts products");
+Assert.assertEquals(true, teststepsLogin.selectShoppingCarts());
+
+
+globalIdentifiers.writeExtentReport = globalIdentifiers,test.createNode("Step"+(++node)+":Entering the Address Details");
+Assert.assertEquals(true, teststepsLogin.enterAddressDetails());
+
+
+globalIdentifiers.writeExtentReport = globalIdentifiers,test.createNode("Step"+(++node)+":Logout of the Demo Application");
+Assert.assertEquals(true, teststepsLogin.logoutOfTheDemoWebShopApplication());
+
+}
+
+}
+
+
+
+
+
+

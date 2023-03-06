@@ -1,0 +1,286 @@
+package pagefactory.login;
+
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.junit.After
+import org.junit.Before;
+import org.junit.Test;
+
+import Driver.LogWriter;
+import Driver.util.Constants;
+import Util.TestUtil;
+import Executor.baseclass;
+import Executor.globalIdentifiers;
+
+import org.openqa.selenium.By;
+import org.openqa.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+
+public class pageDemoLogin{
+
+@FindBy( xpath= "//a[@class='ico-login']")
+public static WebElement btnLoginlink;
+
+
+
+@FindBy( xpath= "//input[@class='button-1 login-button']")
+public static WebElement btnLogin;
+
+@FindBy( xpath= "(//span[@class='cart-label'])[1]")
+public static WebElement btnShoppingCart;
+
+@FindBy( xpath= "(//input[@name='removefromcart'])[1]")
+public static WebElement chkBoxShoppingCart;
+
+@FindBy( xpath= "//input[@name='updatecart']")
+public static WebElement btnUpdateShoppingCart;
+
+
+
+@FindBy( xpath= "//input[@class='email']")
+public static WebElement txtEmailID;
+
+@FindBy( xpath= "//input[@class='password']")
+public static WebElement txtPassword;
+
+@FindBy( xpath= "(//a[@class='account'])[1]")
+public static WebElement txtaccountID;
+
+@FindBy( xpath= "(//*[@class='active'])")
+public static WebElement btnDesktop;
+
+@FindBy( xpath= "(//div[@class='details'])[1]")
+public static WebElement linkComputersList;
+
+
+@FindBy( xpath= "//input[@class='qty-input valid']")
+public static WebElement QtyFromComputersList;
+
+@FindBy( xpath= "//input[@class='button-1 add-to-cart-button']")
+public static WebElement btnAddToCart;
+
+@FindBy( xpath= "//p[@class='content']")
+public static WebElement txtContent;
+
+@FindBy( id="termsofservice")
+public static WebElement termsofService;
+
+@FindBy( xpath= "//*[@class='button-1 checkout-button']")
+public static WebElement btnCheckOut;
+
+@FindBy( xpath= "//*[@class='address-select valid']")
+public static WebElement selectAddressDropdown;
+
+
+@FindBy(id="BillingNewAddress_FirstName")
+public static WebElement txtFirstName;
+
+@FindBy(id= "BillingNewAddress_LastName")
+public static WebElement txtLastName;
+
+@FindBy(id= "BillingNewAddress_Email")
+public static WebElement txtEmail;
+
+@FindBy(id="BillingNewAddress_CountryId")
+public static WebElement selectCountryDropdown;
+
+@FindBy(id= "BillingNewAddress_City")
+public static WebElement addressCity;
+
+@FindBy(id= "BillingNewAddress_Address1")
+public static WebElement address1;
+
+@FindBy(id= "BillingNewAddress.Address2")
+public static WebElement address2;
+
+@FindBy(id= "BillingNewAddress_ZipPostalCode")
+public static WebElement zipCode;
+
+@FindBy( xpath= "(//input[@class='button-1 new-address-next-step-button'])[1]")
+public static WebElement btnContinue;
+
+
+@FindBy( xpath= "//INPUT[@class='button-1 payment-method-next-step-button']")
+public static WebElement btnContinueCOD;
+
+@FindBy( xpath= "//input[@class='button-1 payment-info-next-step-button']")
+public static WebElement btnConfirmCOD;
+
+
+
+@FindBy(id= "BillingNewAddress_PhoneNumber")
+public static WebElement phoneNumber;
+
+@FindBy( xpath= "//input[@id='shippingoption_1']")
+public static WebElement btnRadioNextDay;
+
+@FindBy( xpath= "//input[@id='paymentmethod_0']")
+public static WebElement btnRadioCOD;
+
+
+@FindBy( xpath= "//a[@class='ico-logout']")
+public static WebElement btnLogoutLink;
+
+
+
+
+public static boolean clickOnLoginlink() throws IOException{
+
+return TestUtil.click(btnLoginlink, "btnLoginlink");
+
+public static boolean clickOnLogoutLink() throws IOException{
+
+return TestUtil.click(btnLogoutLink, "btnLogoutLink");
+
+
+public static boolean clickOnLoginbtn() throws IOException{
+
+return TestUtil.click(btnLogin, "btnLogin");
+
+public static boolean clickOnbtnShoppingCart() throws IOException{
+
+return TestUtil.click(btnShoppingCart, "btnShoppingCart");
+
+public static boolean clickOnchkBoxShoppingCart() throws IOException{
+
+return TestUtil.click(chkBoxShoppingCart, "chkBoxShoppingCart");
+
+public static boolean clickOnbtnDesktop() throws IOException{
+
+return TestUtil.click(btnDesktop, "btnDesktop");
+
+public static boolean clickOnLoginbtn() throws IOException{
+
+return TestUtil.click(btnLogin, "btnLogin");
+
+public static boolean clickOnCheckOutbtn() throws IOException{
+
+return TestUtil.click(btnCheckOut, "btnCheckOut");
+
+
+public static boolean clickOnlinkComputersList() throws IOException{
+
+return TestUtil.JavaScriptclick(linkComputersList, "linkComputersList");
+
+
+public static boolean clickOnbtnUpdateShoppingCart() throws IOException{
+
+return TestUtil.click(btnUpdateShoppingCart, "btnUpdateShoppingCart");
+
+
+public static boolean clickOnbtnAddToCart() throws IOException{
+
+return TestUtil.click(btnAddToCart, "btnAddToCart");
+
+
+public static boolean clickOnQtyFromComputersList() throws IOException{
+
+return TestUtil.click(QtyFromComputersList, "QtyFromComputersList");
+
+public static boolean clickOntermsofService() throws IOException{
+
+return TestUtil.click(termsofService, "termsofService");
+
+
+public static boolean clickOnContinue() throws IOException{
+
+return TestUtil.click(btnContinue, "btnContinue");
+
+
+public static boolean clickOnbtnContinueCOD() throws IOException{
+
+return TestUtil.click(btnContinueCOD, "btnContinueCOD");
+
+public static boolean clickOnbtnConfirmCOD() throws IOException{
+
+return TestUtil.click(btnConfirmCOD, "btnConfirmCOD");
+
+
+
+public static boolean clickOnbtnRadioNextDay() throws IOException{
+
+return TestUtil.click(btnRadioNextDay, "btnRadioNextDay");
+
+
+
+public static boolean enterQtyFromComputersList(String qty) throws IOException{
+
+return TestUtil.SendKeys(QtyFromComputersList, qty,"QtyFromComputersList");
+
+
+public static boolean enterFirstName(String firstname) throws IOException{
+
+return TestUtil.SendKeys(txtFirstName, firstname,"txtFirstName");
+
+
+public static boolean enterLastName(String lastname) throws IOException{
+
+return TestUtil.SendKeys(txtLastName, lastname,"txtLastName");
+
+
+public static boolean enterEmail(String email) throws IOException{
+
+return TestUtil.SendKeys(txtEmail, email,"txtEmail");
+
+
+public static boolean enteraddressCity(String addresscity) throws IOException{
+
+return TestUtil.SendKeys(addressCity,addresscity, "addressCity");
+
+public static boolean enteraddress1(String address1) throws IOException{
+
+return TestUtil.SendKeys(address1,address1, "address1");
+
+public static boolean enteraddress2(String address2) throws IOException{
+
+return TestUtil.SendKeys(address2,address2, "address2");
+
+public static boolean enterZipcode(String zipcode) throws IOException{
+
+return TestUtil.SendKeys(zipCode,zipcode, "zipCode");
+
+
+public static boolean enterEmailID(String emailID) throws IOException{
+
+return TestUtil.SendKeys(txtEmailID, emailID,"txtEmailID");
+
+public static boolean enterPhoneNumber(String phonenumber) throws IOException{
+
+return TestUtil.SendKeys(phoneNumber,phonenumber, "phoneNumber");
+
+public static boolean enterPassword(String password) throws IOException{
+
+return TestUtil.SendKeys(txtPassword,password, "txtPassword");
+
+
+public static boolean verifyAccountID() throws IOException{
+
+return TestUtil.IsObjectPresent(txtaccountID, 180,"txtaccountID");
+
+public static boolean verifyCOD() throws IOException{
+
+return TestUtil.IsObjectPresent(btnRadioCOD, 180,"btnRadioCOD");
+
+
+
+public static boolean verifyContent() throws IOException{
+
+return TestUtil.IsObjectPresent(txtContent, 180,"txtContent");
+
+
+public static boolean selectAddressDropdown(String addressDropdown) throws IOException{
+
+return TestUtil.SelectByVisibletext(selectAddressDropdown, addressDropdown);
+
+
+public static boolean selectCountry(String countrydropdown) throws IOException{
+
+return TestUtil.SelectByVisibletext(selectCountryDropdown, countrydropdown);
+
+
+

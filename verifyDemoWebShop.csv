@@ -1,0 +1,2 @@
+﻿TestData_ID,EMAILID,Password,Quantity,FirstName,LastName,Email,City,Address1,Address2,ZipCode,PhoneNumber
+DemoWeb,planittest78@gmail.com,::123456,::2,Sidhu,Reddy,sidhu@gmail.com,Hyderabad,ABDC,ADCB,::9967,::9959585951

@@ -1,0 +1,4 @@
+chromedriver= C:\\chromedriver.exe
+ExecutorFile= C:\\Demo_Executor.xslx
+ExecutionBrowser= Chrome
+DemoWebUrl=http://demowebshop.tricentis.com/

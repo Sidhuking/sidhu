@@ -1,0 +1,155 @@
+
+package teststeps.login;
+
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.junit.After
+import org.junit.Before;
+import org.junit.Test;
+
+import Driver.LogWriter;
+import Driver.util.Constants;
+import Util.TestUtil;
+import Executor.baseclass;
+import Executor.globalIdentifiers;
+import org.openqa.selenium.By;
+import org.openqa.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import pagefactory.pageDemoLogin;
+import pagefactory.pageDemoDashboard;
+
+
+
+public class teststepsLogin {
+
+public teststepsLogin(){
+
+pageDemoLogin pageDemoLogin = new pageDemoLogin();
+
+}
+
+
+
+public static boolean launchDemoWebShopApplication() throws IOExcepion{
+
+globalIdentifier.status= false;
+
+globalIdentifier.dirver.navigate().refresh();
+
+Thread.sleep(2000);
+
+globalIdentifier.dirver.get(globalIdentifiers.DemoWebUrl);
+
+if(globalIdentifiers.status)
+{
+globalIdentifier.status= true;
+}
+else{
+globalIdentifier.status= false;
+}
+ return globalIdentifiers.status;
+}
+
+
+public static boolean loginToDemoWebShopApplication() throws IOExcepion{
+
+globalIdentifiers.status= false;
+
+pageDemoLogin.clickOnLoginlink();
+pageDemoLogin.enterEmailID(globalIdentifiers.sTestDataKeyvalues.get("EMAILID");
+pageDemoLogin.enterPassword(globalIdentifiers.sTestDataKeyvalues.get("Password");
+pageDemoLogin.clickOnLoginbtn();
+pageDemoLogin.verifyAccountID();
+
+if(globalIdentifiers.status)
+{
+globalIdentifier.status= true;
+}
+else{
+globalIdentifier.status= false;
+}
+ return globalIdentifiers.status;
+}
+
+
+public static boolean selectShoppingCarts() throws IOExcepion{
+
+
+globalIdentifiers.status= false;
+
+pageDemoLogin.clickOnbtnShoppingCart();
+pageDemoLogin.clickOnchkBoxShoppingCart();
+pageDemoLogin.clickOnbtnUpdateShoppingCart();
+pageDemoLogin.clickOnbtnDesktop();
+pageDemoLogin.clickOnlinkComputersList();
+pageDemoLogin.enterQtyFromComputersList(globalIdentifiers.sTestDataKeyvalues.get("Quantity");
+pageDemoLogin.clickOnbtnAddToCart();
+pageDemoLogin.verifyContent();
+pageDemoLogin.clickOntermsofService();
+pageDemoLogin.clickOnCheckOutbtn();
+
+if(globalIdentifiers.status)
+{
+globalIdentifier.status= true;
+}
+else{
+globalIdentifier.status= false;
+}
+ return globalIdentifiers.status;
+}
+
+
+
+public static boolean enterAddressDetails() throws IOExcepion{
+
+
+globalIdentifiers.status= false;
+
+
+pageDemoLogin.selectAddressDropdown();
+pageDemoLogin.enterFirstName(globalIdentifiers.sTestDataKeyvalues.get("FirstName");
+pageDemoLogin.enterLastName(globalIdentifiers.sTestDataKeyvalues.get("LastName");
+pageDemoLogin.enterEmail(globalIdentifiers.sTestDataKeyvalues.get("Email");
+pageDemoLogin.enteraddressCity(globalIdentifiers.sTestDataKeyvalues.get("City");
+pageDemoLogin.enteraddress1(globalIdentifiers.sTestDataKeyvalues.get("Address1");
+pageDemoLogin.enteraddress2(globalIdentifiers.sTestDataKeyvalues.get("Address2");
+pageDemoLogin.enterZipcode(globalIdentifiers.sTestDataKeyvalues.get("ZipCode");
+pageDemoLogin.enterPhoneNumber(globalIdentifiers.sTestDataKeyvalues.get("PhoneNumber");
+pageDemoLogin.clickOnContinue();
+pageDemoLogin.clickOnbtnRadioNextDay();
+pageDemoLogin.clickOnbtnContinueCOD();
+pageDemoLogin.clickOnbtnConfirmCOD();
+pageDemoLogin.verifyCOD();
+
+
+
+if(globalIdentifiers.status)
+{
+globalIdentifier.status= true;
+}
+else{
+globalIdentifier.status= false;
+}
+ return globalIdentifiers.status;
+}
+}
+
+
+public static boolean logoutOfTheDemoWebShopApplication() throws IOExcepion{
+
+globalIdentifiers.status= false;
+
+pageDemoLogin.clickOnLogoutLink();
+
+
+if(globalIdentifiers.status)
+{
+globalIdentifier.status= true;
+}
+else{
+globalIdentifier.status= false;
+}
+ return globalIdentifiers.status;
+}
